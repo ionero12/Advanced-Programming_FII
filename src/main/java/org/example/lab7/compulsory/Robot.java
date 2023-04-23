@@ -3,15 +3,25 @@ package org.example.lab7.compulsory;
 import java.util.Random;
 
 public class Robot implements Runnable {
-    private String name;
-    private boolean running;
     ExplorationMap map;
-    private Random rand;
+    int nrTokens;
+    private final String name;
+    private boolean running;
+    private final Random rand;
 
     public Robot(String name, ExplorationMap map) {
         this.map = map;
         this.name = name;
         this.rand = new Random();
+        this.nrTokens = 0;
+    }
+
+    public int getNrTokens() {
+        return nrTokens;
+    }
+
+    public void addTokens(int tokens) {
+        this.nrTokens+=tokens;
     }
 
     public String getName() {
@@ -28,10 +38,6 @@ public class Robot implements Runnable {
 
             //viziteaza celula si extrage tokenii
             boolean visited = map.visit(row, col, this);
-            /*
-            if (visited) {
-                System.out.println(name + " a vizitat [" + row + "," + col + "]");
-            }*/
 
             //sleep pana la noua explorare
             try {

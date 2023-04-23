@@ -40,6 +40,7 @@ public class ExplorationMap {
                 cell.addTokens(tokens);
                 cell.setVisited(true);
                 System.out.println(robot.getName() + " a vizitat celula [" + row + ", " + col + "] si a extras " + n + " tokens: " + tokens);
+                robot.addTokens(n);
                 return true;
             }
         }

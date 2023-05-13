@@ -1,4 +1,4 @@
-package org.example.lab10.compulsory.ServerApplication.src.main.java.org.example;
+package org.example.lab10.ServerApplication.src.main.java.org.example;
 
 public class Board {
     private final int size = 15;

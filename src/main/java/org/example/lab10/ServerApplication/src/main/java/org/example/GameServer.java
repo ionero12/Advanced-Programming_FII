@@ -1,4 +1,4 @@
-package org.example.lab10.compulsory.ServerApplication.src.main.java.org.example;
+package org.example.lab10.ServerApplication.src.main.java.org.example;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static org.example.lab10.compulsory.ServerApplication.src.main.java.org.example.ConsoleColor.*;
 
 public class GameServer {
     private ServerSocket serverSocket;
@@ -59,7 +57,7 @@ public class GameServer {
         while (true) {
             try {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println(BLUE + "New client connected: " + clientSocket.getInetAddress());
+                System.out.println(ConsoleColor.BLUE + "New client connected: " + clientSocket.getInetAddress());
                 ClientThread clientThread = new ClientThread(clientSocket, this);
                 clients.add(clientThread);
                 clientThread.start();
@@ -72,7 +70,7 @@ public class GameServer {
     public void createGame(String gameName, String playerName) {
         Game game = new Game(gameName, playerName);
         games.put(gameName, game);
-        System.out.println(GREEN + "Game: " + gameName + " created by player: " + playerName);
+        System.out.println(ConsoleColor.GREEN + "Game: " + gameName + " created by player: " + playerName);
     }
 
     public int joinGame(String gameName, String playerName) {
@@ -80,14 +78,14 @@ public class GameServer {
         if (game != null) {
             int ok = game.addPlayer(playerName);
             if (ok == 1) {
-                System.out.println(YELLOW + "Player " + playerName + " joined the game: " + gameName);
+                System.out.println(ConsoleColor.YELLOW + "Player " + playerName + " joined the game: " + gameName);
                 return 1;
             } else if (ok == 0) {
-                System.out.println(RED + "Max number of players");
+                System.out.println(ConsoleColor.RED + "Max number of players");
                 return 0;
             }
         } else {
-            System.out.println(RED + "Game not found: " + gameName);
+            System.out.println(ConsoleColor.RED + "Game not found: " + gameName);
             return -1;
         }
         return -2;

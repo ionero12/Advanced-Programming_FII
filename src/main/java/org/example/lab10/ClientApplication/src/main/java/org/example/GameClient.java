@@ -1,4 +1,4 @@
-package org.example.lab10.compulsory.ClientApplication.src.main.java.org.example;
+package org.example.lab10.ClientApplication.src.main.java.org.example;
 //package org.example;
 
 import java.io.BufferedReader;

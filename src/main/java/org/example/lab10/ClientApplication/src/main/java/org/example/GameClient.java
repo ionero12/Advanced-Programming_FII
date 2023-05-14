@@ -1,6 +1,8 @@
 package org.example.lab10.ClientApplication.src.main.java.org.example;
 //package org.example;
 
+import org.example.lab10.ServerApplication.src.main.java.org.example.Player;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

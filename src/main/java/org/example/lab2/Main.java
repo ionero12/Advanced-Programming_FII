@@ -1,5 +1,6 @@
 package org.example.lab2;
 
+import org.example.lab2.homework.Instance;
 import org.example.lab2.bonus.Solution;
 import org.example.lab2.compulsory.Location;
 import org.example.lab2.compulsory.Road;
@@ -7,7 +8,6 @@ import org.example.lab2.compulsory.RoadType;
 import org.example.lab2.homework.Airport;
 import org.example.lab2.homework.City;
 import org.example.lab2.homework.GasStation;
-import org.example.lab2.homework.Instance;
 
 import java.util.List;
 

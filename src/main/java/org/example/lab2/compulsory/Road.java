@@ -23,46 +23,46 @@ public class Road {
         this.finish = finish;
     }
 
-    public Road(Location start, Location finish, double length){
-        this.start=start;
-        this.finish=finish;
-        this.length=length;
+    public Road(Location start, Location finish, double length) {
+        this.start = start;
+        this.finish = finish;
+        this.length = length;
     }
 
     public RoadType getType() {
         return type;
     }
 
-    public double getLength() {
-        return length;
-    }
-
-    public int getSpeedLimit() {
-        return speedLimit;
-    }
-
-    public Location getStart() {
-        return start;
-    }
-
-    public Location getFinish() {
-        return finish;
-    }
-
     public void setType(RoadType type1) {
         type = type1;
+    }
+
+    public double getLength() {
+        return length;
     }
 
     public void setLength(double length1) {
         length = length1;
     }
 
+    public int getSpeedLimit() {
+        return speedLimit;
+    }
+
     public void setSpeedLimit(int speedLimit1) {
         speedLimit = speedLimit1;
     }
 
+    public Location getStart() {
+        return start;
+    }
+
     public void setStart(Location start1) {
         start = start1;
+    }
+
+    public Location getFinish() {
+        return finish;
     }
 
     public void setFinish(Location finish1) {
@@ -71,13 +71,7 @@ public class Road {
 
     @Override
     public String toString() {
-        return "Compulsory.Road{" +
-                "type=" + type +
-                ", length=" + length +
-                ", speedLimit=" + speedLimit +
-                ", start=" + start +
-                ", finish=" + finish +
-                '}';
+        return "Compulsory.Road{" + "type=" + type + ", length=" + length + ", speedLimit=" + speedLimit + ", start=" + start + ", finish=" + finish + '}';
     }
 
     @Override

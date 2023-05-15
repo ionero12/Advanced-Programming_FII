@@ -21,37 +21,37 @@ public class Location {
         this.y = y;
     }
 
-    public Location(double x, double y){
-        this.x=x;
-        this.y=y;
+    public Location(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public double getX() {
-        return x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
     public void setName(String name1) {
         name = name1;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setType(String type1) {
         type = type1;
     }
 
+    public double getX() {
+        return x;
+    }
+
     public void setX(double x1) {
         x = x1;
+    }
+
+    public double getY() {
+        return y;
     }
 
     public void setY(double y1) {
@@ -60,12 +60,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Compulsory.Location{" +
-                "name='" + name + '\'' +
-                ", type=" + type +
-                ", x=" + x +
-                ", y=" + y +
-                '}';
+        return "Compulsory.Location{" + "name='" + name + '\'' + ", type=" + type + ", x=" + x + ", y=" + y + '}';
     }
 
     @Override

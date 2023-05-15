@@ -40,7 +40,7 @@ public class Instance {
         this.roads = roads;
     }
 
-    //adaugarea unei locatii sau a unui drum nou, doar daca nu exista deja
+    //adaugarea unei locatii sau a unui drum nou, doar daca nu exista
     public void addLocations(Location location) {
         int condition = 1;
         for (Location value : locations) {

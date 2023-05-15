@@ -8,7 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.awt.Color.*;
+import static org.example.lab10.ServerApplication.src.main.java.org.example.ConsoleColor.*;
+
 
 public class GameServer {
     private ServerSocket serverSocket;

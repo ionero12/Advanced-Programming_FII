@@ -21,6 +21,11 @@ public class Location {
         this.y = y;
     }
 
+    public Location(double x, double y){
+        this.x=x;
+        this.y=y;
+    }
+
     public String getName() {
         return name;
     }

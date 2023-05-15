@@ -3,10 +3,7 @@ package org.example.lab2.homework;
 import org.example.lab2.compulsory.Location;
 import org.example.lab2.compulsory.Road;
 
-import java.util.ArrayList;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
@@ -23,8 +20,8 @@ public class Instance {
     private List<Road> roads;
 
     public Instance() {
-        this.locations = new ArrayList<>();
-        this.roads = new ArrayList<>();
+        locations = new ArrayList<>();
+        roads = new ArrayList<>();
     }
 
     public List<Location> getLocations() {
@@ -52,8 +49,7 @@ public class Instance {
                 break;
             }
         }
-        if (condition == 1)
-            locations.add(location);
+        if (condition == 1) locations.add(location);
     }
 
     public void addRoads(Road road) {
@@ -64,11 +60,10 @@ public class Instance {
                 break;
             }
         }
-        if (condition == 1)
-            roads.add(road);
+        if (condition == 1) roads.add(road);
     }
 
-    // verifica daca poate drumul poate exista
+    // verifica daca drumul poate exista
     public boolean isValid() {
         for (Road road : roads)
             if (road.getLength() <= sqrt(pow((road.getFinish().getX() - road.getStart().getX()), 2) + pow((road.getFinish().getY() - road.getStart().getY()), 2)))
@@ -79,8 +74,7 @@ public class Instance {
     //verifica daca exista drum intre 2 locatii
     public boolean isRoad(Location locationStart, Location locationFinish) {
         Set<Location> visited = new HashSet<>();
-        if (locationStart == locationFinish)
-            return true;
+        if (locationStart == locationFinish) return true;
         visited.add(locationStart);
         for (Road road : roads) {
             if (road.getStart() == locationStart && !visited.contains(road.getFinish()) && (isRoad(road.getFinish(), locationFinish))) {
@@ -91,3 +85,4 @@ public class Instance {
         return false;
     }
 }
+

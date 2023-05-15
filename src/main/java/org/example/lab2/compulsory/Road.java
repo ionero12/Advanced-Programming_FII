@@ -23,6 +23,12 @@ public class Road {
         this.finish = finish;
     }
 
+    public Road(Location start, Location finish, double length){
+        this.start=start;
+        this.finish=finish;
+        this.length=length;
+    }
+
     public RoadType getType() {
         return type;
     }

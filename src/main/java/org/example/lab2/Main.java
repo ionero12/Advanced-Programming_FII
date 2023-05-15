@@ -1,5 +1,6 @@
 package org.example.lab2;
 
+import org.example.lab2.bonus.Solution;
 import org.example.lab2.compulsory.Location;
 import org.example.lab2.compulsory.Road;
 import org.example.lab2.compulsory.RoadType;
@@ -7,6 +8,8 @@ import org.example.lab2.homework.Airport;
 import org.example.lab2.homework.City;
 import org.example.lab2.homework.GasStation;
 import org.example.lab2.homework.Instance;
+
+import java.util.List;
 
 
 public class Main {
@@ -19,6 +22,7 @@ public class Main {
         Road road1 = new Road(RoadType.EXPRESS, 85.6, 100, city1, city2);
         Road road2 = new Road(RoadType.COUNTRY, 337, 120, city2, gasStation1);
         Road road3 = new Road(RoadType.HIGHWAYS, 7646, 150, gasStation1, airport1);
+
         Instance instance1 = new Instance();
         instance1.addLocations(city1);
         instance1.addLocations(city2);
@@ -40,5 +44,31 @@ public class Main {
         System.out.println();
         System.out.println("Exista drum de la airport1 la city3?");
         System.out.println(instance1.isRoad(airport1, city3)); // false (nu exista niciun fel de drum)
+        System.out.println();
+
+
+        Solution sol = new Solution();
+        sol.addLocations(city1);
+        sol.addLocations(city2);
+        sol.addLocations(city3);
+        sol.addLocations(gasStation1);
+        sol.addLocations(airport1);
+        sol.addLocations(gasStation1); // nu o sa mearga pt ca am adaugat deja locatia
+        sol.addRoads(road1);
+        sol.addRoads(road2);
+        sol.addRoads(road3);
+
+        Location startLocation = city1; // Specify the start location
+        Location finishLocation = airport1; // Specify the finish location
+
+        List<Road> shortestPath = sol.shortestPath(startLocation, finishLocation);
+        if (shortestPath.isEmpty()) {
+            System.out.println("No path found.");
+        } else {
+            System.out.println("Shortest path:");
+            for (Road road : shortestPath) {
+                System.out.println(road);
+            }
+        }
     }
 }

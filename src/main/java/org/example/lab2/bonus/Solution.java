@@ -17,7 +17,7 @@ public class Solution {
 
     public static void main(String[] args) {
         int numLocations = 500; // Number of locations in the instance
-        int numRoads = (500 * 501) / 2; // Number of roads in the instance
+        int numRoads = 1000; // Number of roads in the instance
 
         Solution sol = generateRandomInstance(numLocations, numRoads);
 

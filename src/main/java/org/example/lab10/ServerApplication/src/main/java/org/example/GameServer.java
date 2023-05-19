@@ -71,7 +71,7 @@ public class GameServer {
     }
 
     public void createGame(String gameName, String playerName) {
-        Game game = new Game(gameName, playerName);
+        Game game = new Game(gameName);
         games.put(gameName, game);
         System.out.println(GREEN + "Game: " + gameName + " created by player: " + playerName);
     }
@@ -79,7 +79,7 @@ public class GameServer {
     public int joinGame(String gameName, String playerName) {
         Game game = games.get(gameName);
         if (game != null) {
-            int ok = game.addPlayer(playerName);
+            int ok = game.addPlayer();
             if (ok == 1) {
                 System.out.println(YELLOW + "Player " + playerName + " joined the game: " + gameName);
                 return 1;

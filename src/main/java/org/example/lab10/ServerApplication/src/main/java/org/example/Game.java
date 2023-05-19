@@ -7,10 +7,10 @@ public class Game {
     private Player player2;
     private Player currentPlayer;
 
-    public Game(String gameName, String player1Name) {
+    public Game(String gameName ) {
         this.gameName = gameName;
         this.board = new Board(15);
-        this.player1 = new Player(player1Name);
+        this.player1 = new Player();
         //this.player2 = new Player(player2Name);
         this.currentPlayer = player1;
     }
@@ -79,9 +79,9 @@ public class Game {
         return false;
     }
 
-    public int addPlayer(String playerName) {
+    public int addPlayer( ) {
         if (player2 == null) {
-            player2 = new Player(playerName);
+            player2 = new Player();
             return 1;
         }
         return 0;

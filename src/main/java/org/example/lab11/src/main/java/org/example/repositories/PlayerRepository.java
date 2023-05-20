@@ -1,6 +1,7 @@
-package org.example.lab11.src.main.java.org.example.repositories;
+package org.example.repositories;
 
-import org.example.lab10.ServerApplication.src.main.java.org.example.Player;
+
+import org.example.models.Player;
 
 import java.util.ArrayList;
 import java.util.List;

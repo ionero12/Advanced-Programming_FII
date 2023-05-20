@@ -1,13 +1,13 @@
-package org.example.lab11.src.main.java.org.example.controllers;
+package org.example.controllers;
 
 //import io.swagger.v3.oas.annotations.Operation;
 //import io.swagger.v3.oas.annotations.tags.Tag;
-import org.example.lab11.src.main.java.org.example.repositories.PlayerRepository;
+import org.example.models.Player;
+import org.example.repositories.PlayerRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import org.example.lab10.ServerApplication.src.main.java.org.example.Player;
 
 @RestController
 @RequestMapping("/players")

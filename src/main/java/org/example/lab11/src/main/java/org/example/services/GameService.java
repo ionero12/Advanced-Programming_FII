@@ -1,6 +1,7 @@
-package org.example.lab11.src.main.java.org.example.services;
+package org.example.services;
 
-import org.example.lab10.ServerApplication.src.main.java.org.example.Game;
+
+import org.example.models.Game;
 
 import java.util.ArrayList;
 import java.util.List;

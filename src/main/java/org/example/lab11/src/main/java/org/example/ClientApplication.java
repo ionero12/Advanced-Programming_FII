@@ -1,6 +1,6 @@
-package org.example.lab11.src.main.java.org.example;
+package org.example;
 
-import org.example.lab10.ServerApplication.src.main.java.org.example.Player;
+import org.example.models.Player;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -53,7 +53,8 @@ public class ClientApplication {
 
     public void updatePlayerName(int id, String playerName) {
         String url = "http://localhost:8081/players/changeName/{id}";
-        Player player = new Player(playerName);
+        Player player = new Player();
+        player.setPlayerName(playerName);
         restTemplate.put(url, player, id);
         System.out.println("\u001B[36m" + "Player name updated successfully" + "\u001B[0m");
     }

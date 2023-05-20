@@ -1,7 +1,7 @@
-package org.example.lab11.src.main.java.org.example.controllers;
+package org.example.controllers;
 
-import org.example.lab10.ServerApplication.src.main.java.org.example.Game;
-import org.example.lab11.src.main.java.org.example.services.GameService;
+import org.example.models.Game;
+import org.example.services.GameService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,16 +11,16 @@ import java.util.List;
 @RequestMapping("/games")
 public class GameController {
 
-    private GameService gameRepository = new GameService();
+    private GameService gameService = new GameService();
 
     @PostMapping("/add")
     public ResponseEntity<String> addGame(@RequestBody Game game) {
-        gameRepository.addGame(game);
+        gameService.addGame(game);
         return ResponseEntity.ok("Game added successfully");
     }
 
     @GetMapping("/view")
     public List<Game> getAllGames() {
-        return gameRepository.getGames();
+        return gameService.getGames();
     }
 }

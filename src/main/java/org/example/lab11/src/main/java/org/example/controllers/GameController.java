@@ -1,7 +1,7 @@
-package org.example.lab11.Spring.src.main.java.org.example.controllers;
+package org.example.lab11.src.main.java.org.example.controllers;
 
 import org.example.lab10.ServerApplication.src.main.java.org.example.Game;
-import org.example.lab11.Spring.src.main.java.org.example.services.GameService;
+import org.example.lab11.src.main.java.org.example.services.GameService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

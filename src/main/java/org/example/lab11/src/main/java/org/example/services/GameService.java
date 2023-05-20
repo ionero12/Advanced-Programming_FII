@@ -1,4 +1,4 @@
-package org.example.lab11.Spring.src.main.java.org.example.services;
+package org.example.lab11.src.main.java.org.example.services;
 
 import org.example.lab10.ServerApplication.src.main.java.org.example.Game;
 

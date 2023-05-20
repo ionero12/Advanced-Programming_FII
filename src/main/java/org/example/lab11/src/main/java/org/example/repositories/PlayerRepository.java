@@ -1,4 +1,4 @@
-package org.example.lab11.Spring.src.main.java.org.example.repositories;
+package org.example.lab11.src.main.java.org.example.repositories;
 
 import org.example.lab10.ServerApplication.src.main.java.org.example.Player;
 

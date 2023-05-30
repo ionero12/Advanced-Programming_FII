@@ -2,8 +2,12 @@ package org.example.controllers;
 
 //import io.swagger.v3.oas.annotations.Operation;
 //import io.swagger.v3.oas.annotations.tags.Tag;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
+import org.example.models.Game;
 import org.example.models.Player;
 import org.example.repositories.PlayerRepository;
+import org.example.services.GameService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,26 +15,33 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/players")
-//@Tag(name = "Player Management")
+//@Api(tags = "Player Management")
 public class PlayerController {
 
     private PlayerRepository playerRepository= new PlayerRepository();
+    private GameService gameService = new GameService();
 
     @PostMapping("/add")
-    //@Operation(summary = "Add a new player")
+    //@ApiOperation("Add a new player")
     public ResponseEntity<String> addPlayer(@RequestBody Player player) {
         playerRepository.addPlayer(player);
         return ResponseEntity.ok("Player added successfully");
     }
 
     @GetMapping("/view")
-    //@Operation(summary = "Get all players")
+    //@ApiOperation("Get all players")
     public List<Player> getAllPlayers() {
         return playerRepository.getPlayers();
     }
 
+    @GetMapping("/view/games")
+    //@ApiOperation("Get all games")
+    public List<Game> getAllGames() {
+        return gameService.getGames();
+    }
+
     @PutMapping("changeName/{id}")
-    //@Operation(summary = "Update player name")
+    //@ApiOperation("Update player name")
     public ResponseEntity<String> updatePlayerName(@PathVariable int id, @RequestBody Player player) {
         if(playerRepository.updatePlayerName(id, player.getPlayerName()) == 1)
             return ResponseEntity.ok("Player found and name updated successfully");
@@ -38,10 +49,13 @@ public class PlayerController {
     }
 
     @DeleteMapping("delete/{id}")
-    //@Operation(summary = "Delete player by ID")
+    //@ApiOperation("Delete player by ID")
     public ResponseEntity<String> deletePlayer(@PathVariable int id) {
         if(playerRepository.deletePlayer(id) == 1)
             return ResponseEntity.ok("Player found and deleted successfully");
         return ResponseEntity.ok("Player not found");
     }
+
+
 }
+

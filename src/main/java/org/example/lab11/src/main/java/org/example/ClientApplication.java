@@ -26,6 +26,7 @@ public class ClientApplication {
         client.addPlayer(2, "Bianca");
         client.getAllPlayers();
         client.updatePlayerName(0, "Daniela");
+        client.getAllPlayers();
         client.deletePlayer(2);
         client.getAllPlayers();
         client.getAllGames();
